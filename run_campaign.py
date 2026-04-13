@@ -163,7 +163,7 @@ def generate_html_page(records: list) -> None:
         """生成更像人氣購物推薦站的 SEO 靜態 HTML + Sitemap + robots。"""
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         iso_date = datetime.now().strftime("%Y-%m-%dT%H:%M:%S+08:00")
-        site_url = "https://HanRyul.github.io/promo/life/"
+        site_url = "https://hanryul32.github.io/promo/life/"
         facebook_page_url = "https://www.facebook.com/gogo.buy.it/"
 
         category_colors = {
