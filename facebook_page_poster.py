@@ -161,17 +161,17 @@ def post_to_facebook(message):
                     timeout=60,
                 )
         else:
-        # 無圖片：純文字 + 連結
-        url = f"https://graph.facebook.com/v22.0/{FACEBOOK_PAGE_ID}/feed"
-        resp = requests.post(
-            url,
-            data={
-                "message": message,
-                "link": SITE_URL,
-                "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
-            },
-            timeout=20,
-        )
+            # 無圖片：純文字 + 連結
+            url = f"https://graph.facebook.com/v22.0/{FACEBOOK_PAGE_ID}/feed"
+            resp = requests.post(
+                url,
+                data={
+                    "message": message,
+                    "link": SITE_URL,
+                    "access_token": FACEBOOK_PAGE_ACCESS_TOKEN,
+                },
+                timeout=20,
+            )
 
     print(f"[Facebook] HTTP {resp.status_code}")
     if resp.status_code == 200:
