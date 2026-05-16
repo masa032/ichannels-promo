@@ -39,14 +39,15 @@ jobs:
 
           echo "== live endpoint ==" | tee -a watch.log
           live_status=1
+          life_path="/life/"
           live_urls=()
           if [ -f CNAME ]; then
             cname_domain="$(head -n 1 CNAME | sed 's/^\xEF\xBB\xBF//' | tr -d '\r' | xargs)"
             if [ -n "$cname_domain" ]; then
-              live_urls+=("https://${cname_domain}/life/")
+              live_urls+=("https://${cname_domain}${life_path}")
             fi
           fi
-          live_urls+=("https://hanryul32.github.io/promo/life/")
+          live_urls+=("https://hanryul32.github.io/promo${life_path}")
           for live_url in "${live_urls[@]}"; do
             echo "checking ${live_url}" | tee -a watch.log
             if curl --fail --location --max-time 30 --silent --show-error "$live_url" > /tmp/life.html 2>> watch.log; then
